@@ -1,0 +1,27 @@
+{
+  "name": "gods-eye-view-xr",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Tabletop WebXR companion for God's Eye View: a live 3D globe you can grab, built with the Immersive Web SDK. Runs in Chrome through the bundled IWER emulator or natively on Quest.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test",
+    "e2e": "node scripts/e2e-emulator.mjs"
+  },
+  "dependencies": {
+    "3d-tiles-renderer": "^0.5.3",
+    "@iwsdk/core": "1.0.0-rc.2",
+    "three": "npm:super-three@0.181.0"
+  },
+  "devDependencies": {
+    "@iwsdk/vite-plugin-iwer": "^0.2.2",
+    "vite": "^7.3.6"
+  }
+}
