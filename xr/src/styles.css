@@ -1,0 +1,207 @@
+:root {
+  --bg: #05080d;
+  --panel: rgb(10 16 24 / 0.86);
+  --line: rgb(79 240 255 / 0.28);
+  --text: #d8e6ef;
+  --muted: #8aa0b0;
+  --accent: #4ff0ff;
+  color-scheme: dark;
+  font-family:
+    ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+}
+
+#scene canvas {
+  display: block;
+}
+
+.panel {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: min(320px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  backdrop-filter: blur(8px);
+}
+
+.panel h1 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.panel h1 span {
+  color: var(--accent);
+}
+
+.panel label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.panel select,
+.panel input,
+.panel button {
+  font: inherit;
+  color: var(--text);
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.panel select {
+  width: 100%;
+}
+
+.panel button {
+  cursor: pointer;
+}
+
+.panel button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.panel button:focus-visible,
+.panel select:focus-visible,
+.panel input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.panel button[aria-pressed='true'] {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+.panel button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.modes {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.modes button {
+  flex: 1;
+}
+
+.primary {
+  width: 100%;
+  padding: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.panel details {
+  margin-top: 10px;
+}
+
+.panel summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.panel ul {
+  padding-left: 18px;
+  margin: 6px 0;
+}
+
+.key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.key input {
+  flex: 1 1 100%;
+}
+
+.status,
+.hint,
+.credits {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.credits {
+  font-size: 10px;
+}
+
+.layers {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 10px;
+}
+
+.panel .toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.selected {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ffd60a;
+  border-radius: 8px;
+}
+
+.selected h2 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #ffd60a;
+}
+
+.panel dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 2px 10px;
+  margin: 0 0 8px;
+}
+
+.panel dt {
+  color: var(--muted);
+}
+
+.panel dd {
+  margin: 0;
+}
+
+.help {
+  margin-top: 8px;
+}
